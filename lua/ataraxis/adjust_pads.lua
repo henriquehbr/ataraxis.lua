@@ -2,7 +2,7 @@ local options_store = require "ataraxis.options"
 local add_pads = require "ataraxis.add_pads"
 local set_pad_width = require "ataraxis.set_pad_width"
 
-local function adjust_pads()
+function _G.adjust_pads()
     local options = options_store.get()
     if vim.o.columns <= options.width then
         -- remove paddings on shrinking
@@ -23,5 +23,3 @@ local function adjust_pads()
         vim.g.eventignore = ""
     end
 end
-
-return adjust_pads
