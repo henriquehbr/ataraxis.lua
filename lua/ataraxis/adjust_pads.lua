@@ -4,7 +4,10 @@ local set_pad_width = require "ataraxis.set_pad_width"
 
 function _G.adjust_pads()
     local options = options_store.get()
-    if vim.o.columns <= options.width then
+
+    local viewport_too_narrow = vim.o.columns <= options.width
+
+    if viewport_too_narrow then
         -- remove paddings on shrinking
         vim.cmd "bw! leftbuffer rightbuffer"
     elseif vim.fn.bufwinnr "leftbuffer" == -1 then
