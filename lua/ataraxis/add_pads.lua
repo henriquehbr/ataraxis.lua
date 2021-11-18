@@ -11,8 +11,9 @@ local function add_pads()
     local left_pad_exists = has_element(buffers, "leftbuffer")
     local right_pad_exists = has_element(buffers, "rightbuffer")
     local pads_exists = left_pad_exists or right_pad_exists
+    local should_add_pads = not window_too_narrow and not pads_exists
 
-    if window_too_narrow or pads_exists then
+    if not should_add_pads then
         return
     end
 
