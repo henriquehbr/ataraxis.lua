@@ -1,6 +1,6 @@
 # ataraxis.lua
 
-> absence of mental stress or axiety, a state of serene calmness
+> absence of mental stress or anxiety, a state of serene calmness
 
 ![screenshot](./screenshot.png)
 
